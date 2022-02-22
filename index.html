@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>BLOG ADMIN</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="angular.js"></script>
+</head>
+<body style="background-color:lightgreen"; ng-app="crudApp">
+    <section ng-controller="crudController" class="container"> 
+  
+        <h3 style="background-color:lightblue";>BLOG MODEL</h3></h
+         
+        
+        
+        
+      
+<tr>
+<td><input class="form-control" type="text" ng-model="data.blog_id" placeholder="blog_id"> </td>
+<td> <input class="form-control" type="text" ng-model="data.blog_title" placeholder="blog_title"></td>
+<td><input class="form-control" type="text" ng-model="data.blog_content" placeholder="blog_content"></td>
+<td><input class="form-control" type="text" ng-model="data.added_at_date" placeholder="added_at_date"></td>
+<td><input type="button" ng-click="create()" value="create" class="btn btn-success"></td>
+
+</tr>
+        </table>
+        <div ng-style="x" style="display:none;">
+        <h3>Update User</h3>
+        <table class="table table-bordered" >
+           
+            <tr>
+                <input type="hidden" ng-model="edit.index">
+             <td><input class="form-control" type="text" ng-model="edit.update_blog_id" placeholder="blog_id"> </td>
+            <td> <input class="form-control" type="text" ng-model="edit.blog_title" placeholder="blog_title"></td>
+            <td><input class="form-control" type="text" ng-model="edit.blog_content" placeholder="blog_content"></td>
+            <td><input class="form-control" type="text" ng-model="edit.added_at_date" placeholder="added_at_date"></td>
+            <td><input type="button" ng-click="updateUser ()" value="update user" class="btn btn-success"></td>
+            
+            </tr>
+                    </table>
+                    <br>
+                    </div>
+
+
+      <table class="table table-bordered">
+<thead style="background:lightblue;">
+<th>Index</th>
+<th>blog_title</th>
+<th>blog_id</th>
+<th>blog_content</th>
+<th>added_at_date</th>
+<th>edit</th>
+<th>delete</th>
+<th>read</th>
+</thead>
+<tr ng-repeat="data in records">
+<td>{{$index}}</td>
+<td>{{data.blog_id}}</td>
+<td>{{data.blog_title}}</td>
+<td>{{data.blog_content}}</td>
+<td>{{data.added_at_date}}</td>
+<td><input class="btn btn-info" type="button" ng-click="edit()" name="" value="edit"></td>
+<td><input class="btn btn-danger" type="button" ng-click="delete()" name="" value="delete"></td>
+<td><input class="btn btn-success" type="button" ng-click="read()" name="" value="read"></td>
+
+
+</tr>
+</table>  
+</section>
+<script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
